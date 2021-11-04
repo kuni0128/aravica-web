@@ -2,7 +2,8 @@ FROM ruby:3.0.2-slim
 
 ENV APP_ROOT /app
 
-RUN apt-get update -qq && apt-get install -y build-essential
+RUN apt-get update -qq && \
+    apt-get install -y build-essential default-libmysqlclient-dev default-mysql-client
 
 WORKDIR $APP_ROOT
 
