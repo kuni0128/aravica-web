@@ -2,6 +2,19 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
+AllCops:
+  Exclude:
+    - 'docker/**/*'
+    - 'bin/**/*'
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'db/seeds/*'
+    - 'db/seeds.rb'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'spec/factories/**/*'
+
 #
 # Style
 #
@@ -17,5 +30,7 @@ Style/TrailingCommaInArrayLiteral:
 #
 Layout/ArrayAlignment:
   EnforcedStyle: with_fixed_indentation
+
 Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
+
