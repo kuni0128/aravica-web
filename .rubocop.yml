@@ -2,6 +2,20 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'docker/**/*'
+    - 'bin/**/*'
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'db/seeds/*'
+    - 'db/seeds.rb'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'spec/factories/**/*'
+
 #
 # Style
 #
@@ -9,3 +23,21 @@ Style/ClassAndModuleChildren:
   Enabled: false
 Style/Documentation:
   Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+#
+# Layout
+#
+Layout/ArrayAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+#
+# Metrics
+#
+Metrics/BlockLength:
+  Enabled: false
+
