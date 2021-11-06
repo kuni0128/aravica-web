@@ -16,3 +16,5 @@ rubocop/fix:
 	${API_EXEC_CMD} bundle exec rubocop -a
 rspec:
 	${API_EXEC_CMD} bundle exec rspec
+seed:
+	${API_EXEC_CMD} bin/rails db:seed
