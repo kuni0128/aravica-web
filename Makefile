@@ -16,5 +16,12 @@ rubocop/fix:
 	${API_EXEC_CMD} bundle exec rubocop -a
 rspec:
 	${API_EXEC_CMD} bundle exec rspec
+
+#
+# db
+#
+db/update: migrate seed
+migrate:
+	${API_EXEC_CMD} bin/rails db:migrate
 seed:
 	${API_EXEC_CMD} bin/rails db:seed

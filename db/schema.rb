@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_06_135835) do
+ActiveRecord::Schema.define(version: 2021_11_06_141951) do
+
+  create_table "origin_countries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "region_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_origin_countries_on_name", unique: true
+    t.index ["region_id"], name: "index_origin_countries_on_region_id"
+  end
 
   create_table "regions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -19,4 +28,5 @@ ActiveRecord::Schema.define(version: 2021_11_06_135835) do
     t.index ["name"], name: "index_regions_on_name", unique: true
   end
 
+  add_foreign_key "origin_countries", "regions"
 end
