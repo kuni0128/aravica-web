@@ -14,3 +14,5 @@ rubocop:
 	${API_EXEC_CMD} bundle exec rubocop
 rubocop/fix:
 	${API_EXEC_CMD} bundle exec rubocop -a
+rspec:
+	${API_EXEC_CMD} bundle exec rspec
