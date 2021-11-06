@@ -35,3 +35,9 @@ Layout/ArrayAlignment:
 Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
+#
+# Metrics
+#
+Metrics/BlockLength:
+  Enabled: false
+
