@@ -16,6 +16,7 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # DB, ORM, Model
 #
 gem 'mysql2', '~> 0.5'
+gem 'seedbank'
 
 #
 # Others
@@ -32,6 +33,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'listen', '~> 3.3'
   gem 'spring'
 end
