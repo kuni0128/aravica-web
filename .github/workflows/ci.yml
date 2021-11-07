@@ -26,11 +26,6 @@ jobs:
     steps:
       - name: checkout codes
         uses: actions/checkout@v2
-#      - name: setup ruby
-#        uses: ruby/setup-ruby@v1
-#        with:
-#          ruby-version: 3.0.2
-#          bundler-cache: true
       - name: cache docker image
         uses: actions/cache@v2
         id: cache-docker-image
@@ -42,12 +37,6 @@ jobs:
       - name: load docker image
         run: docker load < ~/docker_images/aravica-web_api_latest.tar
       - name: run rubocop
-        uses: reviewdog/action-rubocop@v2
-        with:
-          github_token: ${{ secrets.github_token }}
-          rubocop_version: gemfile
-          rubocop_extensions: rubocop-rails:gemfile rubocop-rspec:gemfile
-          reporter: github-pr-review
-          fail_on_error: true
+        run: make rubocop
       - name: run rspec
         run: make rspec
