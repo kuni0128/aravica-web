@@ -1,7 +1,7 @@
 name: aravica-web ci
 on: [pull_request]
 jobs:
-  rubocop:
+  lint_and_test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout codes
@@ -18,3 +18,5 @@ jobs:
           rubocop_extensions: rubocop-rails:gemfile rubocop-rspec:gemfile
           reporter: github-pr-review
           fail_on_error: true
+      - name: run rspec
+        run: make rspec
