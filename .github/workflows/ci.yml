@@ -20,7 +20,7 @@ jobs:
       - name: save docker image
         if: steps.cache-docker-image.outputs.cache-hit != 'true'
         run: mkdir -p ~/docker_images && docker save aravica-web_api:latest > ~/docker_images/aravica-web_api_latest.tar
-  api_lint_and_test:
+  lint_and_test:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
