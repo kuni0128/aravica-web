@@ -2,6 +2,7 @@ _API_SERVICE_NAME:=api
 DOCKER_CMD:=docker-compose
 
 API_EXEC_CMD:=${DOCKER_CMD} exec ${_API_SERVICE_NAME}
+API_RUN_CMD:=${DOCKER_CMD} run ${_API_SERVICE_NAME}
 
 .PHONY: build clean test
 
@@ -14,10 +15,12 @@ build:
 #
 # api
 #
-api/console:
+console:
 	${API_EXEC_CMD} /bin/bash
 rubocop:
 	${API_EXEC_CMD} bundle exec rubocop
+run/rubocop:
+	${API_RUN_CMD} bundle exec rubocop
 rubocop/fix:
 	${API_EXEC_CMD} bundle exec rubocop -a
 rspec:
