@@ -1,4 +1,6 @@
 name: aravica-web ci
+env:
+  CACHE_NAME: docker-image
 on: [pull_request]
 jobs:
   prepare:
@@ -9,11 +11,9 @@ jobs:
       - name: cache docker image
         uses: actions/cache@v2
         id: cache-docker-image
-        env:
-          cache-name: docker-image
         with:
           path: ~/docker_images
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('docker/api/Dockerfile', 'Gemfile.lock') }}
+          key: ${{ runner.os }}-build-${{ env.CACHE_NAME }}-${{ hashFiles('docker/api/Dockerfile', 'Gemfile.lock') }}
       - name: create docker image
         if: steps.cache-docker-image.outputs.cache-hit != 'true'
         run: make build
@@ -29,12 +29,10 @@ jobs:
       - name: cache docker image
         uses: actions/cache@v2
         id: cache-docker-image
-        env:
-          cache-name: docker-image
         with:
           path: ~/docker_images
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('docker/api/Dockerfile', 'Gemfile.lock') }}
+          key: ${{ runner.os }}-build-${{ env.CACHE_NAME }}-${{ hashFiles('docker/api/Dockerfile', 'Gemfile.lock') }}
       - name: load docker image
         run: docker load < ~/docker_images/aravica-web_latest.tar
       - name: run rubocop
-        run: make run/rubocop
+        run: make ci/rubocop

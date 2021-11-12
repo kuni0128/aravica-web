@@ -19,8 +19,6 @@ console:
 	${API_EXEC_CMD} /bin/bash
 rubocop:
 	${API_EXEC_CMD} bundle exec rubocop
-run/rubocop:
-	${API_RUN_CMD} bundle exec rubocop
 rubocop/fix:
 	${API_EXEC_CMD} bundle exec rubocop -a
 rspec:
@@ -34,3 +32,11 @@ migrate:
 	${API_EXEC_CMD} bin/rails db:migrate
 seed:
 	${API_EXEC_CMD} bin/rails db:seed
+
+#
+# ci
+#
+ci/rubocop:
+	${API_RUN_CMD} bundle exec rubocop
+ci/rspec:
+	${API_RUN_CMD} bundle exec rspec
