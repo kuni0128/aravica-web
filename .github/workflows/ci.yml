@@ -20,7 +20,7 @@ jobs:
         run: make build
       - name: save docker image
         if: steps.cache-docker-image.outputs.cache-hit != 'true'
-        run: mkdir -p ~/docker_images && docker save aravica-web:latest > ~/docker_images/aravica-web_latest.tar
+        run: mkdir -p ~/docker_images && docker save aravica-web_api:latest > ~/docker_images/aravica-web_api_latest.tar
   lint_and_test:
     needs: prepare
     runs-on: ubuntu-latest
@@ -34,6 +34,6 @@ jobs:
           path: ~/docker_images
           key: ${{ runner.os }}-build-${{ env.CACHE_NAME }}-${{ env.CACHE_VERSION }}-${{ hashFiles('docker/api/Dockerfile', 'Gemfile.lock') }}
       - name: load docker image
-        run: docker load < ~/docker_images/aravica-web_latest.tar
+        run: docker load < ~/docker_images/aravica-web_api_latest.tar
       - name: run rubocop
         run: make ci/rubocop
