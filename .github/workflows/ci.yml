@@ -1,7 +1,7 @@
 name: aravica-web ci
 env:
   CACHE_NAME: docker-image
-  CACHE_VERSION: 1.0.0
+  CACHE_VERSION: 1.0.1
 on: [pull_request]
 jobs:
   prepare:
@@ -37,3 +37,5 @@ jobs:
         run: docker load < ~/docker_images/aravica-web_api_latest.tar
       - name: run rubocop
         run: make ci/rubocop
+      - name: run rspec
+        run: make ci/rspec
