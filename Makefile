@@ -39,4 +39,5 @@ seed:
 ci/rubocop:
 	${API_RUN_CMD} bundle exec rubocop
 ci/rspec:
-	${APP_RUN_CMD} sh -c "./bin/rails db:environment:set RAILS_ENV=test db:schema:load && ./bin/rails db:environment:set SPEC=${SPEC} RAILS_ENV=test spec"
+	${API_RUN_CMD} bundle exec rspec
+	#${APP_RUN_CMD} sh -c "./bin/rails db:environment:set RAILS_ENV=test db:schema:load && ./bin/rails db:environment:set SPEC=${SPEC} RAILS_ENV=test spec"
