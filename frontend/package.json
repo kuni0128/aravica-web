@@ -11,6 +11,8 @@
     "fix": "yarn lint && yarn format"
   },
   "dependencies": {
+    "@aspida/axios": "^1.7.1",
+    "axios": "^0.24.0",
     "vue": "^3.2.16"
   },
   "devDependencies": {
