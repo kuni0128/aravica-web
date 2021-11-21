@@ -7,7 +7,7 @@
     "serve": "vite preview",
     "lint": "eslint --fix src/*.{ts,vue} && eslint --fix src/**/*.{ts,vue}",
     "format": "prettier -w src/*.{ts,vue} && prettier -w src/**/*.{ts,vue}",
-    "fix": "yarn format && yarn lint"
+    "fix": "yarn lint && yarn format"
   },
   "dependencies": {
     "vue": "^3.2.16"
