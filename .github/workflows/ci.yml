@@ -35,15 +35,9 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.CACHE_NAME }}-${{ env.CACHE_VERSION }}-${{ hashFiles('docker/api/Dockerfile', 'Gemfile.lock') }}
       - name: load docker image
         run: docker load < ~/docker_images/aravica-web_api_latest.tar
-      - name: up docker container
-        run: docker-compose up -d db api
       - name: run rubocop
-        run: make rubocop
-      - name: run rspec
-        run: make rspec
-#      - name: run rubocop
-#        run: make ci/rubocop
+        run: make ci/rubocop
 #      - name: setup tmate sessin
 #        uses: mxschmitt/action-tmate@v3
-#      - name: run rspec
-#        run: make ci/rspec
+      - name: run rspec
+        run: make ci/rspec
