@@ -1,0 +1,43 @@
+name: aravica-web ci
+env:
+  CACHE_NAME: docker-image
+  CACHE_VERSION: 1.0.1
+on: [pull_request]
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout codes
+        uses: actions/checkout@v2
+      - name: cache docker image
+        uses: actions/cache@v2
+        id: cache-docker-image
+        with:
+          path: ~/docker_images
+          key: ${{ runner.os }}-build-${{ env.CACHE_NAME }}-${{ env.CACHE_VERSION }}-${{ hashFiles('docker/api/Dockerfile', 'Gemfile.lock') }}
+      - name: create docker image
+        if: steps.cache-docker-image.outputs.cache-hit != 'true'
+        run: make build
+      - name: save docker image
+        if: steps.cache-docker-image.outputs.cache-hit != 'true'
+        run: mkdir -p ~/docker_images && docker save aravica-web_api:latest > ~/docker_images/aravica-web_api_latest.tar
+  lint_and_test:
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout codes
+        uses: actions/checkout@v2
+      - name: cache docker image
+        uses: actions/cache@v2
+        id: cache-docker-image
+        with:
+          path: ~/docker_images
+          key: ${{ runner.os }}-build-${{ env.CACHE_NAME }}-${{ env.CACHE_VERSION }}-${{ hashFiles('docker/api/Dockerfile', 'Gemfile.lock') }}
+      - name: load docker image
+        run: docker load < ~/docker_images/aravica-web_api_latest.tar
+      - name: run rubocop
+        run: make ci/rubocop
+      - name: wait 30 seconds
+        run: sleep 30s
+      - name: run rspec
+        run: make ci/rspec
