@@ -39,5 +39,7 @@ jobs:
         run: make ci/rubocop
 #      - name: setup tmate sessin
 #        uses: mxschmitt/action-tmate@v3
+      - name: wait 30 seconds
+        run: sleep 30s
       - name: run rspec
         run: make ci/rspec
