@@ -39,4 +39,5 @@ seed:
 ci/rubocop:
 	${API_RUN_CMD} bundle exec rubocop
 ci/rspec:
-	${API_RUN_CMD} sh -c "bundle exec rails db:setup RAILS_ENV=test & bundle exec rails db:environment:set RAILS_ENV=test db:schema:load && bundle exec rspec"
+	${API_RUN_CMD} sh -c "bundle exec rails db:drop RAILS_ENV=test && bundle exec rails db:setup RAILS_ENV=test && bundle exec rspec RAILS_ENV=test"
+	#${API_RUN_CMD} sh -c "bundle exec rails db:setup RAILS_ENV=test & bundle exec rails db:environment:set RAILS_ENV=test db:schema:load && bundle exec rspec"
