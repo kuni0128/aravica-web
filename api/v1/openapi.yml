@@ -1,0 +1,16 @@
+openapi: 3.0.0
+info:
+  title: Aravica api v1
+  version: '1.0'
+  description: Aravica api definitions called from frontend
+servers:
+  - description: development
+    url: /v1
+paths:
+  /origin-countries:
+    $ref: ./paths/origin_countries/list.yml
+components:
+  schemas:
+    $ref: ./schemas.yml
+  responses:
+    $ref: ./responses.yml
