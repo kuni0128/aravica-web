@@ -7,8 +7,8 @@ servers:
   - description: development
     url: /v1
 paths:
-  /origin-countries:
-    $ref: ./paths/origin_countries/list.yml
+  /common/origin-countries:
+    $ref: ./common/paths/origin_countries/list.yml
 components:
   responses:
     $ref: ./responses.yml

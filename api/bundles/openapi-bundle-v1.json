@@ -12,7 +12,7 @@
     }
   ],
   "paths": {
-    "/origin-countries": {
+    "/common/origin-countries": {
       "get": {
         "summary": "List origin countries",
         "operationId": "list-origin-countries",
