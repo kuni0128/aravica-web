@@ -1,0 +1,34 @@
+get:
+  summary: List origin countries
+  operationId: list-origin-countries
+  description: List origin countries
+  tags:
+    - common
+  responses:
+    '200':
+      description: list_origin_countries_response
+      content:
+        application/json:
+          schema:
+            title: list_origin_countries_response
+            type: object
+            properties:
+              results:
+                type: array
+                items:
+                  title: OriginCountry
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      minimum: 1
+                    name:
+                      type: string
+                  required:
+                    - id
+                    - name
+            required:
+              - results
+    default:
+      $ref: ../../openapi.yml#/components/responses/default

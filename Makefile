@@ -40,3 +40,11 @@ ci/rubocop:
 	${API_RUN_CMD} bundle exec rubocop
 ci/rspec:
 	${API_RUN_CMD} sh -c "bundle exec rails db:reset RAILS_ENV=test && bundle exec rspec"
+
+#
+# open-api
+#
+openapi/bundle:
+	docker run --rm -v "${PWD}:/local" jeanberu/swagger-cli swagger-cli bundle local/api/v1/openapi.yml -o local/api/bundles/openapi-bundle-v1.json
+openapi/generate:
+	docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i /local/api/bundles/openapi-bundle-v1.json -g typescript-axios -o /local/frontend/lib/aravica/api_client/v1
