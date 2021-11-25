@@ -1,0 +1,3 @@
+# @see https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/typescript-axios.md
+additionalProperties:
+  apiPackage: apis

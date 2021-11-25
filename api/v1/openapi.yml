@@ -10,7 +10,5 @@ paths:
   /origin-countries:
     $ref: ./paths/origin_countries/list.yml
 components:
-  schemas:
-    $ref: ./schemas.yml
   responses:
     $ref: ./responses.yml

@@ -1,5 +1,0 @@
-description: error
-content:
-  application/json:
-    schema:
-      $ref: ../../models/error_response.yml
