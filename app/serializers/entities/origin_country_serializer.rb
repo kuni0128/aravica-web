@@ -2,6 +2,6 @@
 
 module Entities
   class OriginCountrySerializer < ActiveModel::Serializer
-    attributes %i(id name)
+    attributes %i[id name]
   end
 end
