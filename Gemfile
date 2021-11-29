@@ -42,3 +42,7 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
 end
+
+group :test do
+  gem 'committee-rails'
+end
