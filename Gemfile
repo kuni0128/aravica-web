@@ -19,6 +19,11 @@ gem 'mysql2', '~> 0.5'
 gem 'seedbank'
 
 #
+# API
+#
+gem 'active_model_serializers', '~> 0.10.0'
+
+#
 # Others
 #
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

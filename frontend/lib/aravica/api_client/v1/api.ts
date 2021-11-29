@@ -86,7 +86,7 @@ export const CommonApiAxiosParamCreator = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         listOriginCountries: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/origin-countries`;
+            const localVarPath = `/common/origin-countries`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;

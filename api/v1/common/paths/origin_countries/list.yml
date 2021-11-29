@@ -31,4 +31,4 @@ get:
             required:
               - results
     default:
-      $ref: ../../openapi.yml#/components/responses/default
+      $ref: ../../../openapi.yml#/components/responses/default
