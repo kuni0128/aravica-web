@@ -11,6 +11,8 @@ API_RUN_CMD:=${DOCKER_CMD} run ${_API_SERVICE_NAME}
 #
 build:
 	${DOCKER_CMD} build
+rebuild:
+	${DOCKER_CMD} build --no-cache --force-rm
 
 #
 # api
