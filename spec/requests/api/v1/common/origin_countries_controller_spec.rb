@@ -7,6 +7,7 @@ RSpec.describe ::Api::V1::Common::OriginCountriesController, type: :request do
     it 'return http status 200' do
       get api_v1_common_origin_countries_path
       expect(response).to have_http_status(:ok)
+      assert_response_schema_confirm(status)
     end
   end
 end
