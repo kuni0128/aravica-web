@@ -1,6 +1,6 @@
 FROM ruby:3.0.2-slim
 
-ENV APP_ROOT /app
+ENV APP_ROOT /aravica
 
 RUN apt-get update -qq && \
     apt-get install -y build-essential default-libmysqlclient-dev default-mysql-client
