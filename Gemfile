@@ -32,6 +32,7 @@ group :development, :test do
   gem 'debase'
   gem 'ruby-debug-ide'
   gem 'factory_bot_rails'
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 4.1.0'
   gem 'rubocop', require: false
