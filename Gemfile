@@ -29,10 +29,10 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'debase'
   gem 'ruby-debug-ide'
   gem 'factory_bot_rails'
+  gem 'pry-rails'
   gem 'rspec-rails', '~> 4.1.0'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false

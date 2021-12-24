@@ -4,10 +4,13 @@ require 'rails_helper'
 
 RSpec.describe ::Api::V1::Common::OriginCountriesController, type: :request do
   describe 'GET /api/v1/common/origin_countries' do
-    it 'return http status 200' do
+    before {
       get api_v1_common_origin_countries_path
+    }
+
+    it 'return http status 200' do
       expect(response).to have_http_status(:ok)
-      # assert_response_schema_confirm(status)
+      # assert_response_schema_confirm(200)
     end
   end
 end
