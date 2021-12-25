@@ -8,8 +8,7 @@ RSpec.describe ::Api::V1::Common::OriginCountriesController, type: :request do
     it 'return http status 200' do
       subject
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body).size).to be(OriginCountry.all.size)
-      # assert_response_schema_confirm(200)
+      assert_response_schema_confirm(200)
     end
   end
 end

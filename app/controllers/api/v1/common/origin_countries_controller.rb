@@ -3,7 +3,7 @@
 module Api::V1::Common
   class OriginCountriesController < ApplicationController
     def index
-      render json: OriginCountry.all, each_serializer: ::Api::V1::Common::OriginCountries::IndexSerializer, root: :results
+      render json: OriginCountry.all, each_serializer: ::Api::V1::Common::OriginCountries::IndexSerializer, adapter: :json, root: :results
     end
   end
 end

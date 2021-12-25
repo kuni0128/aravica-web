@@ -5,9 +5,9 @@ info:
   description: Aravica api definitions called from frontend
 servers:
   - description: development
-    url: /v1
+    url: 'http://localhost:33000/api/v1'
 paths:
-  /common/origin-countries:
+  /common/origin_countries:
     $ref: ./common/paths/origin_countries/list.yml
 components:
   responses:

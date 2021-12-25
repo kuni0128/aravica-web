@@ -64,14 +64,6 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  config.add_setting :committee_options
-  config.committee_options = {
-    schema_path: Rails.root.join('api/bundles/openapi-bundle-v1.json').to_s,
-    query_hash_key: 'rack.request.query_hash',
-    parse_response_by_content_type: false
-  }
-  config.include Committee::Rails::Test::Methods, type: :request
-
   config.include FactoryBot::Syntax::Methods
 
   config.before(:suite) do
