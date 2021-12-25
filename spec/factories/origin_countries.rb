@@ -19,6 +19,5 @@
 #
 FactoryBot.define do
   factory :origin_country do
-    
   end
 end
