@@ -11,6 +11,8 @@ API_RUN_CMD:=${DOCKER_CMD} run ${_API_SERVICE_NAME}
 #
 build:
 	${DOCKER_CMD} build
+rebuild:
+	${DOCKER_CMD} build --no-cache --force-rm
 
 #
 # api
@@ -46,5 +48,5 @@ ci/rspec:
 #
 openapi/bundle:
 	docker run --rm -v "${PWD}:/local" jeanberu/swagger-cli swagger-cli bundle local/api/v1/openapi.yml -o local/api/bundles/openapi-bundle-v1.json
-openapi/generate:
+openapi/generate: openapi/bundle
 	docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i /local/api/bundles/openapi-bundle-v1.json -g typescript-axios -o /local/frontend/lib/aravica/api_client/v1

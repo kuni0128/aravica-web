@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.2'
+ruby '3.0.0'
 
 #
 # Core
@@ -29,16 +29,24 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'debase'
   gem 'factory_bot_rails'
+  gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'rspec-rails', '~> 4.1.0'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'ruby-debug-ide'
 end
 
 group :development do
   gem 'annotate'
   gem 'listen', '~> 3.3'
   gem 'spring'
+end
+
+group :test do
+  gem 'committee-rails'
+  gem 'rspec-request_describer'
 end
