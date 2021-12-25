@@ -48,4 +48,5 @@ end
 
 group :test do
   gem 'committee-rails'
+  gem 'rspec-request_describer'
 end

@@ -188,6 +188,7 @@ GEM
       rspec-expectations (~> 3.10)
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
+    rspec-request_describer (0.3.2)
     rspec-support (3.10.3)
     rubocop (1.22.3)
       parallel (~> 1.10)
@@ -245,6 +246,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 6.1.4, >= 6.1.4.1)
   rspec-rails (~> 4.1.0)
+  rspec-request_describer
   rubocop
   rubocop-rails
   rubocop-rspec
