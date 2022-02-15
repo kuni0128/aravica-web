@@ -11,7 +11,7 @@
         :lg="6"
         :xl="6"
       >
-        <ElCard :body-style="{ padding: '12px' }">
+        <ElCard class="card" :body-style="{ padding: '12px' }">
           <img
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
             class="image"
@@ -41,7 +41,7 @@ const today = ref(new Date())
 }
 
 .card {
-  margin: 0 12px 12px 0;
+  margin-bottom: 12px;
 }
 
 .bottom {
