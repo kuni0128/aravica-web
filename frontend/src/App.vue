@@ -1,7 +1,12 @@
 <template>
   <ElContainer>
     <ElHeader>
-      <RouterLink to="/users/me">my page</RouterLink>
+      <div>
+        <RouterLink to="/">home</RouterLink>
+      </div>
+      <div>
+        <RouterLink to="/users/me">my page</RouterLink>
+      </div>
     </ElHeader>
     <ElMain>
       <RouterView />
