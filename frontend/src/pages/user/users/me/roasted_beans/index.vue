@@ -1,7 +1,16 @@
 <template>
   <div>
     <ElRow :gutter="12">
-      <ElCol v-for="(o, i) in 5" :key="o" :span="6">
+      <ElCol
+        v-for="(o, i) in 4"
+        :key="o"
+        :span="6"
+        :xs="24"
+        :sm="12"
+        :md="8"
+        :lg="6"
+        :xl="6"
+      >
         <ElCard :body-style="{ padding: '12px' }">
           <img
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
