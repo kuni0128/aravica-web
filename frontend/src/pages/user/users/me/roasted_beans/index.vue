@@ -1,6 +1,50 @@
 <template>
-  <div><p>My roasted beans list works!</p></div>
+  <div>
+    <ElRow :gutter="12">
+      <ElCol v-for="(o, i) in 5" :key="o" :span="6">
+        <ElCard :body-style="{ padding: '12px' }">
+          <img
+            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+            class="image"
+          />
+          <div style="padding: 14px">
+            <span>イルガチェフェ G1（ナチュラル）</span>
+            <div class="bottom">
+              <time class="time">{{ today }}</time>
+            </div>
+          </div>
+        </ElCard>
+      </ElCol>
+    </ElRow>
+  </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue"
+
+const today = ref(new Date())
 </script>
+
+<style lang="scss">
+.time {
+  font-size: 13px;
+  color: #999;
+}
+
+.card {
+  margin: 0 12px 12px 0;
+}
+
+.bottom {
+  margin-top: 13px;
+  line-height: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  display: block;
+}
+</style>

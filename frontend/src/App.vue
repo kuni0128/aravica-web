@@ -1,10 +1,15 @@
 <template>
-  <RouterLink to="/users/me">my page</RouterLink>
-  <RouterView />
+  <ElContainer>
+    <ElHeader>
+      <RouterLink to="/users/me">my page</RouterLink>
+    </ElHeader>
+    <ElMain>
+      <RouterView />
+    </ElMain>
+  </ElContainer>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style>
 #app {
