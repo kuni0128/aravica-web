@@ -17,7 +17,7 @@
             class="image"
           />
           <div style="padding: 14px">
-            <span>イルガチェフェ G1（ナチュラル）</span>
+            <span>イルガチェフェ G1</span>
             <div class="bottom">
               <time class="time">{{ today }}</time>
             </div>
