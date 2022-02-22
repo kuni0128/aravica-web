@@ -1,7 +1,7 @@
 <template>
   <h2>最近投稿した焙煎豆</h2>
-  <RoastedBeanList />
-  <RouterLink to="/users/me/roasted_beans">すべて見る</RouterLink>
+  <roasted-bean-list />
+  <router-link to="/users/me/roasted_beans">すべて見る</router-link>
 </template>
 
 <script setup lang="ts">

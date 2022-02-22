@@ -1,17 +1,17 @@
 <template>
-  <ElContainer>
-    <ElHeader>
+  <el-container>
+    <el-header>
       <div>
-        <RouterLink to="/">home</RouterLink>
+        <router-link to="/">home</router-link>
       </div>
       <div>
-        <RouterLink to="/users/me">my page</RouterLink>
+        <router-link to="/users/me">my page</router-link>
       </div>
-    </ElHeader>
-    <ElMain>
-      <RouterView />
-    </ElMain>
-  </ElContainer>
+    </el-header>
+    <el-main>
+      <router-view />
+    </el-main>
+  </el-container>
 </template>
 
 <script setup lang="ts"></script>

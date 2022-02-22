@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ElRow :gutter="12">
-      <ElCol
+    <el-row :gutter="12">
+      <el-col
         v-for="(o, i) in 4"
         :key="o"
         :span="6"
@@ -11,7 +11,7 @@
         :lg="6"
         :xl="6"
       >
-        <ElCard class="card" :body-style="{ padding: '12px' }">
+        <el-card class="card" :body-style="{ padding: '12px' }">
           <img
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
             class="image"
@@ -22,9 +22,9 @@
               <time class="time">{{ today }}</time>
             </div>
           </div>
-        </ElCard>
-      </ElCol>
-    </ElRow>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
