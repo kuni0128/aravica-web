@@ -5,10 +5,17 @@ import "element-plus/dist/index.css"
 import App from "./App.vue"
 
 const routes: RouteRecordRaw[] = [
-  { path: "/users/me", component: import("./pages/user/users/me/index.vue") },
+  {
+    path: "/users/me",
+    component: import("./pages/user/users/me/index.vue"),
+  },
   {
     path: "/users/me/roasted_beans",
     component: import("./pages/user/users/me/roasted_beans/index.vue"),
+  },
+  {
+    path: "/users/me/brewing_coffees",
+    component: import("./pages/user/users/me/brewing_coffees/index.vue"),
   },
 ]
 const router = createRouter({

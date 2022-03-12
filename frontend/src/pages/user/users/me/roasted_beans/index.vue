@@ -1,6 +1,6 @@
 <template>
   <h2>焙煎豆の一覧</h2>
-  <RoastedBeanList />
+  <roasted-bean-list />
 </template>
 
 <script setup lang="ts">
