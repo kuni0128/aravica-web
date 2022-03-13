@@ -1,9 +1,7 @@
 <template>
   <el-container class="app-container">
     <el-header class="app-header">
-      <div class="toolbar">
-        <router-link to="/users/me">Aravica</router-link>
-      </div>
+      <router-link class="title" to="/users/me">Aravica</router-link>
     </el-header>
     <el-main>
       <router-view />
@@ -11,7 +9,7 @@
   </el-container>
 </template>
 
-<style>
+<style lang="scss">
 html,
 body {
   margin: 0px !important;
@@ -25,18 +23,16 @@ body {
   color: #2c3e50;
 }
 
-.app-container .app-header {
-  position: relative;
-  background-color: #b3c0d1;
-  color: var(--el-text-color-primary);
+.app-container {
+  .app-header {
+    padding: 12px;
+    background-color: #dc143c;
+    .title {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
 }
-
-/*.app-container .toolbar {*/
-/*  position: absolute;*/
-/*  display: inline-flex;*/
-/*  align-items: center;*/
-/*  top: 50%;*/
-/*  right: 20px;*/
-/*  transform: translateY(-50%);*/
-/*}*/
 </style>
