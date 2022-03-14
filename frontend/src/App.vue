@@ -1,6 +1,6 @@
 <template>
-  <el-container class="app-container">
-    <el-header class="app-header">
+  <el-container>
+    <el-header>
       <router-link class="title" to="/users/me">Aravica</router-link>
     </el-header>
     <el-main>
@@ -23,10 +23,10 @@ body {
   color: #2c3e50;
 }
 
-.app-container {
-  .app-header {
-    padding: 12px;
+.el-container {
+  .el-header {
     background-color: #dc143c;
+
     .title {
       color: #ffffff;
       font-size: 20px;
