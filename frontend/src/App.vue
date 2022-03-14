@@ -34,5 +34,10 @@ body {
       text-decoration: none;
     }
   }
+
+  .el-main {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
 }
 </style>
