@@ -17,7 +17,8 @@ body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, "BlinkMacSystemFont", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif, "Segoe UI Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -25,7 +26,11 @@ body {
 
 .el-container {
   .el-header {
+    display: flex;
+    align-items: center;
     background-color: #dc143c;
+    padding-left: 120px;
+    padding-right: 120px;
 
     .title {
       color: #ffffff;
