@@ -9,13 +9,21 @@
       </div>
     </el-card>
 
-    <h2>最近購入した焙煎豆</h2>
-    <roasted-bean-list />
-    <router-link to="/users/me/roasted_beans">すべて見る</router-link>
+    <div class="card-list">
+      <h2>焙煎豆</h2>
+      <roasted-bean-list />
+      <router-link class="more-link" to="/users/me/roasted_beans">
+        焙煎豆をもっと見る
+      </router-link>
+    </div>
 
-    <h2>最近飲んだコーヒー</h2>
-    <brewing-coffee-list />
-    <router-link to="/users/me/brewing_coffees">すべて見る</router-link>
+    <div class="card-list">
+      <h2>コーヒー</h2>
+      <brewing-coffee-list />
+      <router-link class="more-link" to="/users/me/brewing_coffees">
+        コーヒーをもっと見る
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -23,3 +31,15 @@
 import RoastedBeanList from "../../../../components/roasted-bean-list.vue"
 import BrewingCoffeeList from "../../../../components/brewing-coffee-list.vue"
 </script>
+
+<style lang="scss" scoped>
+.card-list {
+  display: flex;
+  flex-direction: column;
+
+  .more-link {
+    color: #dc143c;
+    align-self: center;
+  }
+}
+</style>

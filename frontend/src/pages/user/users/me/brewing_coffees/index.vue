@@ -1,5 +1,5 @@
 <template>
-  <h2>淹れたコーヒーの一覧</h2>
+  <h2>コーヒー</h2>
   <brewing-coffee-list />
 </template>
 

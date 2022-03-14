@@ -1,5 +1,5 @@
 <template>
-  <h2>焙煎豆の一覧</h2>
+  <h2>焙煎豆</h2>
   <roasted-bean-list />
 </template>
 
