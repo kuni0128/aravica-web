@@ -38,7 +38,7 @@ import BrewingCoffeeList from "~/components/brewing-coffee-list.vue"
   flex-direction: column;
 
   .more-link {
-    color: #dc143c;
+    color: var(--primary-color);
     align-self: center;
   }
 }
