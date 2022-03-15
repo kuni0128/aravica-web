@@ -5,6 +5,8 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 .idea/
+.vscode/*
+.devcontainer/*
 aravica-web.iml
 
 /vendor

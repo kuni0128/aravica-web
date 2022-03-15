@@ -1,21 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <el-container>
+    <el-header>
+      <router-link class="title" to="/users/me">Aravica</router-link>
+    </el-header>
+    <el-main>
+      <router-view />
+    </el-main>
+  </el-container>
 </template>
 
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from "./components/HelloWorld.vue"
-</script>
+<style lang="scss">
+html,
+body {
+  margin: 0px !important;
+  padding: 0px !important;
+}
 
-<style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, "BlinkMacSystemFont", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif, "Segoe UI Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.el-container {
+  .el-header {
+    display: flex;
+    align-items: center;
+    background-color: #dc143c;
+    padding-left: 120px;
+    padding-right: 120px;
+
+    .title {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+
+  .el-main {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
 }
 </style>
