@@ -28,7 +28,7 @@ body {
   .el-header {
     display: flex;
     align-items: center;
-    background-color: #dc143c;
+    background-color: var(--primary-color);
     padding-left: 120px;
     padding-right: 120px;
 

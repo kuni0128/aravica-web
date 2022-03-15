@@ -28,8 +28,8 @@
 </template>
 
 <script setup lang="ts">
-import RoastedBeanList from "../../../../components/roasted-bean-list.vue"
-import BrewingCoffeeList from "../../../../components/brewing-coffee-list.vue"
+import RoastedBeanList from "~/components/roasted-bean-list.vue"
+import BrewingCoffeeList from "~/components/brewing-coffee-list.vue"
 </script>
 
 <style lang="scss" scoped>
@@ -38,7 +38,7 @@ import BrewingCoffeeList from "../../../../components/brewing-coffee-list.vue"
   flex-direction: column;
 
   .more-link {
-    color: #dc143c;
+    color: var(--primary-color);
     align-self: center;
   }
 }
