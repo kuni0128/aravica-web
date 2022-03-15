@@ -4,5 +4,5 @@
 </template>
 
 <script setup lang="ts">
-import RoastedBeanList from "../../../../../components/roasted-bean-list.vue"
+import RoastedBeanList from "~/components/roasted-bean-list.vue"
 </script>
