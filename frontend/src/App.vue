@@ -29,8 +29,8 @@ body {
     display: flex;
     align-items: center;
     background-color: var(--primary-color);
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 10vw;
+    padding-right: 10vw;
 
     .title {
       color: #ffffff;
@@ -41,8 +41,8 @@ body {
   }
 
   .el-main {
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 10vw;
+    padding-right: 10vw;
   }
 }
 </style>
