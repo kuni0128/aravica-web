@@ -1,20 +1,18 @@
 <template>
   <div>
     <el-card>
-      <div>
-        <div class="profile">
-          <div class="top-area">
-            <img
-              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-              class="user-image"
-            />
-            <el-button class="edit-button">編集</el-button>
-          </div>
-          <span class="user-name">Kuniaki Ishikawa</span>
-          <span class="in-a-word">
-            コーヒー好きが高じてこのAravicaというサービスを作りました。
-          </span>
+      <div class="profile">
+        <div class="top-area">
+          <img
+            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+            class="user-image"
+          />
+          <el-button class="edit-button">編集</el-button>
         </div>
+        <span class="user-name">Kuniaki Ishikawa</span>
+        <span class="in-a-word">
+          コーヒー好きが高じてこのAravicaというサービスを作りました。
+        </span>
       </div>
     </el-card>
 
