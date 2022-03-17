@@ -1,13 +1,6 @@
 <template>
   <div>
-    <el-card>
-      <div>
-        <div>K.Iさんのコーヒー生産国ランキング</div>
-        <p>No1. ケニア 10ポイント</p>
-        <p>No2. エチオピア 7ポイント</p>
-        <p>No3. コスタリカ 5ポイント</p>
-      </div>
-    </el-card>
+    <user-profile />
 
     <div class="card-list">
       <h2>焙煎豆</h2>
@@ -30,6 +23,7 @@
 <script setup lang="ts">
 import RoastedBeanList from "~/components/roasted-bean-list.vue"
 import BrewingCoffeeList from "~/components/brewing-coffee-list.vue"
+import UserProfile from "~/components/user-profile.vue"
 </script>
 
 <style lang="scss" scoped>
