@@ -1,29 +1,32 @@
 <template>
-  <el-row :gutter="12">
-    <el-col
-      v-for="bean in roastedBeans"
-      :span="6"
-      :xs="24"
-      :sm="12"
-      :md="8"
-      :lg="6"
-      :xl="6"
-    >
-      <el-card class="card" :body-style="{ padding: '12px' }">
-        <div class="kind-label">{{ bean.kind }}</div>
-        <img
-          src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-          class="image"
-        />
-        <div class="content">
-          <div class="name">{{ bean.name }}</div>
-          <div class="detail">{{ bean.roast }}／{{ bean.processing }}</div>
-          <div>{{ bean.roastingShopName }}</div>
-          <time class="time">{{ bean.postedOn }}</time>
-        </div>
-      </el-card>
-    </el-col>
-  </el-row>
+  <div>
+    <div v-if="roastedBeans.length < 1">焙煎豆がありません</div>
+    <el-row :gutter="12">
+      <el-col
+        v-for="bean in roastedBeans"
+        :span="6"
+        :xs="24"
+        :sm="12"
+        :md="8"
+        :lg="6"
+        :xl="6"
+      >
+        <el-card class="card" :body-style="{ padding: '12px' }">
+          <div class="kind-label">{{ bean.kind }}</div>
+          <img
+            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+            class="image"
+          />
+          <div class="content">
+            <div class="name">{{ bean.name }}</div>
+            <div class="detail">{{ bean.roast }}／{{ bean.processing }}</div>
+            <div>{{ bean.roastingShopName }}</div>
+            <time class="time">{{ bean.postedOn }}</time>
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script setup lang="ts">

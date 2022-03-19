@@ -5,7 +5,11 @@
     <div class="card-list">
       <h2>焙煎豆</h2>
       <roasted-bean-list :roasted-beans="roastedBeans" />
-      <router-link class="more-link" to="/users/me/roasted_beans">
+      <router-link
+        v-if="roastedBeans.length > 0"
+        class="more-link"
+        to="/users/me/roasted_beans"
+      >
         焙煎豆をもっと見る
       </router-link>
     </div>
