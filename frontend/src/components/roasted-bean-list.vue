@@ -1,69 +1,45 @@
 <template>
-  <el-row :gutter="12">
-    <el-col :span="6" :xs="24" :sm="12" :md="8" :lg="6" :xl="6">
-      <el-card class="card" :body-style="{ padding: '12px' }">
-        <div class="kind-label">シングルオリジン</div>
-        <img
-          src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-          class="image"
-        />
-        <div class="content">
-          <div class="name">エチオピア イルガチェフェ G1</div>
-          <div class="detail">ハイロースト／N</div>
-          <div>自家焙煎珈琲 隠房</div>
-          <time class="time">2022/3/19</time>
-        </div>
-      </el-card>
-    </el-col>
-    <el-col :span="6" :xs="24" :sm="12" :md="8" :lg="6" :xl="6">
-      <el-card class="card" :body-style="{ padding: '12px' }">
-        <div class="kind-label">ブレンド</div>
-        <img
-          src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-          class="image"
-        />
-        <div class="content">
-          <div class="name">隠房ブレンド</div>
-          <div class="detail">シティロースト／W</div>
-          <div>自家焙煎珈琲 隠房</div>
-          <time class="time">2022/3/12</time>
-        </div>
-      </el-card>
-    </el-col>
-    <el-col :span="6" :xs="24" :sm="12" :md="8" :lg="6" :xl="6">
-      <el-card class="card" :body-style="{ padding: '12px' }">
-        <div class="kind-label">シングルオリジン</div>
-        <img
-          src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-          class="image"
-        />
-        <div class="content">
-          <div class="name">ケニア</div>
-          <div class="detail">シティロースト／W</div>
-          <div>自家焙煎珈琲 隠房</div>
-          <time class="time">2022/2/26</time>
-        </div>
-      </el-card>
-    </el-col>
-    <el-col :span="6" :xs="24" :sm="12" :md="8" :lg="6" :xl="6">
-      <el-card class="card" :body-style="{ padding: '12px' }">
-        <div class="kind-label">ブレンド</div>
-        <img
-          src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-          class="image"
-        />
-        <div class="content">
-          <div class="name">F・ハニー</div>
-          <div class="detail">シティロースト／W&N</div>
-          <div>自家焙煎珈琲 隠房</div>
-          <time class="time">2022/2/20</time>
-        </div>
-      </el-card>
-    </el-col>
-  </el-row>
+  <div>
+    <div v-if="roastedBeans.length < 1">焙煎豆がありません</div>
+    <el-row :gutter="12">
+      <el-col
+        v-for="bean in roastedBeans"
+        :span="6"
+        :xs="24"
+        :sm="12"
+        :md="8"
+        :lg="6"
+        :xl="6"
+      >
+        <el-card class="card" :body-style="{ padding: '12px' }">
+          <div class="kind-label">{{ bean.kind }}</div>
+          <img
+            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+            class="image"
+          />
+          <div class="content">
+            <div class="name">{{ bean.name }}</div>
+            <div class="detail">{{ bean.roast }}／{{ bean.processing }}</div>
+            <div>{{ bean.roastingShopName }}</div>
+            <time class="time">{{ bean.postedOn }}</time>
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+type RoastedBean = {
+  name: string
+  kind: string
+  roast: string
+  processing: string
+  roastingShopName: string
+  postedOn: string
+}
+defineProps<{ roastedBeans: RoastedBean[] }>()
+</script>
 
 <style lang="scss">
 .card {
