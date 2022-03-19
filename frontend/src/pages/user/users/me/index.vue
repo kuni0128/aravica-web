@@ -25,9 +25,9 @@
 </template>
 
 <script setup lang="ts">
-import RoastedBeanList from "~/components/roasted-bean-list.vue"
-import BrewingCoffeeList from "~/components/brewing-coffee-list.vue"
-import UserProfile from "~/components/user-profile.vue"
+import RoastedBeanList from "~/components/user/roasted-bean-list.vue"
+import BrewingCoffeeList from "~/components/user/brewing-coffee-list.vue"
+import UserProfile from "~/components/user/user-profile.vue"
 
 const roastedBeans = [
   {

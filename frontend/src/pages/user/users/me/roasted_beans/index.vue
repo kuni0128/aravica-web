@@ -64,7 +64,7 @@
 </template>
 
 <script setup lang="ts">
-import RoastedBeanList from "~/components/roasted-bean-list.vue"
+import RoastedBeanList from "~/components/user/roasted-bean-list.vue"
 import { computed, reactive } from "vue"
 
 const filterForm = reactive({
