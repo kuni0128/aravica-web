@@ -14,13 +14,13 @@
       </router-link>
     </div>
 
-    <div class="card-list">
-      <h2>コーヒー</h2>
-      <brewing-coffee-list />
-      <router-link class="more-link" to="/users/me/brewing_coffees">
-        コーヒーをもっと見る
-      </router-link>
-    </div>
+    <!--    <div class="card-list">-->
+    <!--      <h2>コーヒー</h2>-->
+    <!--      <brewing-coffee-list />-->
+    <!--      <router-link class="more-link" to="/users/me/brewing_coffees">-->
+    <!--        コーヒーをもっと見る-->
+    <!--      </router-link>-->
+    <!--    </div>-->
   </div>
 </template>
 
