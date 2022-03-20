@@ -7,6 +7,10 @@ import "~/assets/styles/global.css"
 
 const routes: RouteRecordRaw[] = [
   {
+    path: "/",
+    component: import("./pages/user/index.vue"),
+  },
+  {
     path: "/users/me",
     component: import("./pages/user/users/me/index.vue"),
   },
