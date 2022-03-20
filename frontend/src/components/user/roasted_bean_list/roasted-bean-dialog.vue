@@ -10,14 +10,14 @@
       <el-descriptions-item label="焙煎店舗名">
         {{ roastedBean.roastingShopName }}
       </el-descriptions-item>
-      <el-descriptions-item label="投稿日">
+      <el-descriptions-item label="焙煎日または購入日">
         {{ roastedBean.postedOn }}
       </el-descriptions-item>
     </el-descriptions>
 
     <div class="divider" />
 
-    <el-descriptions title="生豆データ" :column="1" border>
+    <el-descriptions title="生豆データ" :column="2" border>
       <el-descriptions-item label="品種">ティピカ</el-descriptions-item>
       <el-descriptions-item label="精製">
         {{ roastedBean.processing }}
