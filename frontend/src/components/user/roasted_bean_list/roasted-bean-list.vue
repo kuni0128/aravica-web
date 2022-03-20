@@ -11,12 +11,13 @@
         :lg="6"
         :xl="6"
       >
-        <el-card class="card" :body-style="{ padding: '12px' }">
+        <el-card
+          class="card"
+          @click="handleCardClicked(bean)"
+          :body-style="{ padding: '12px' }"
+        >
           <div class="kind-label">{{ bean.kind }}</div>
-          <img
-            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-            class="image"
-          />
+          <img :src="bean.imagePaths[0]" class="image" />
           <div class="content">
             <div class="name">{{ bean.name }}</div>
             <div class="detail">{{ bean.roast }}／{{ bean.processing }}</div>
@@ -26,10 +27,19 @@
         </el-card>
       </el-col>
     </el-row>
+
+    <roasted-bean-dialog
+      :dialog-visible="roastedBeanDialogVisible"
+      :roasted-bean="dialogRoastedBean"
+      @close="handleDialogClosed"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue"
+import RoastedBeanDialog from "~/components/user/roasted_bean_list/roasted-bean-dialog.vue"
+
 type RoastedBean = {
   name: string
   kind: string
@@ -37,8 +47,28 @@ type RoastedBean = {
   processing: string
   roastingShopName: string
   postedOn: string
+  imagePaths: string[]
 }
 defineProps<{ roastedBeans: RoastedBean[] }>()
+
+const roastedBeanDialogVisible = ref(false)
+const dialogRoastedBean = ref({
+  name: "",
+  kind: "",
+  roast: "",
+  processing: "",
+  roastingShopName: "",
+  postedOn: "",
+  imagePaths: [""],
+})
+
+const handleCardClicked = (roastedBean: RoastedBean) => {
+  dialogRoastedBean.value = roastedBean
+  roastedBeanDialogVisible.value = true
+}
+const handleDialogClosed = () => {
+  roastedBeanDialogVisible.value = false
+}
 </script>
 
 <style lang="scss">

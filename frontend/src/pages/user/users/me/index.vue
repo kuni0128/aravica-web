@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import RoastedBeanList from "~/components/user/roasted-bean-list.vue"
+import RoastedBeanList from "~/components/user/roasted_bean_list/roasted-bean-list.vue"
 import BrewingCoffeeList from "~/components/user/brewing-coffee-list.vue"
 import UserProfile from "~/components/user/user-profile.vue"
 
@@ -37,6 +37,16 @@ const roastedBeans = [
     processing: "N",
     roastingShopName: "自家焙煎珈琲 隠房",
     postedOn: "2022/3/19",
+    imagePaths: [
+      "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+      "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+      "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+      "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+      "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+      "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+      "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+      "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+    ],
   },
   {
     name: "隠房ブレンド",
@@ -45,6 +55,9 @@ const roastedBeans = [
     processing: "W",
     roastingShopName: "自家焙煎珈琲 隠房",
     postedOn: "2022/3/12",
+    imagePaths: [
+      "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+    ],
   },
   {
     name: "ケニア",
@@ -53,6 +66,9 @@ const roastedBeans = [
     processing: "W",
     roastingShopName: "自家焙煎珈琲 隠房",
     postedOn: "2022/2/26",
+    imagePaths: [
+      "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+    ],
   },
   {
     name: "F・ハニー",
@@ -61,6 +77,9 @@ const roastedBeans = [
     processing: "W&N",
     roastingShopName: "自家焙煎珈琲 隠房",
     postedOn: "2022/2/20",
+    imagePaths: [
+      "https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png",
+    ],
   },
 ]
 </script>
