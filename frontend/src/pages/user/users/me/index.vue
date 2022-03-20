@@ -14,55 +14,23 @@
       </router-link>
     </div>
 
-    <div class="card-list">
-      <h2>コーヒー</h2>
-      <brewing-coffee-list />
-      <router-link class="more-link" to="/users/me/brewing_coffees">
-        コーヒーをもっと見る
-      </router-link>
-    </div>
+    <!--    <div class="card-list">-->
+    <!--      <h2>コーヒー</h2>-->
+    <!--      <brewing-coffee-list />-->
+    <!--      <router-link class="more-link" to="/users/me/brewing_coffees">-->
+    <!--        コーヒーをもっと見る-->
+    <!--      </router-link>-->
+    <!--    </div>-->
   </div>
 </template>
 
 <script setup lang="ts">
-import RoastedBeanList from "~/components/roasted-bean-list.vue"
-import BrewingCoffeeList from "~/components/brewing-coffee-list.vue"
-import UserProfile from "~/components/user-profile.vue"
+import RoastedBeanList from "~/components/user/roasted_bean_list/roasted-bean-list.vue"
+import BrewingCoffeeList from "~/components/user/brewing-coffee-list.vue"
+import UserProfile from "~/components/user/user-profile.vue"
+import { listUserRoastedBeans } from "~/domains/roasted_beans"
 
-const roastedBeans = [
-  {
-    name: "エチオピア イルガチェフェ G1",
-    kind: "シングルオリジン",
-    roast: "ハイロースト",
-    processing: "N",
-    roastingShopName: "自家焙煎珈琲 隠房",
-    postedOn: "2022/3/19",
-  },
-  {
-    name: "隠房ブレンド",
-    kind: "ブレンド",
-    roast: "シティロースト",
-    processing: "W",
-    roastingShopName: "自家焙煎珈琲 隠房",
-    postedOn: "2022/3/12",
-  },
-  {
-    name: "ケニア",
-    kind: "シングルオリジン",
-    roast: "シティロースト",
-    processing: "W",
-    roastingShopName: "自家焙煎珈琲 隠房",
-    postedOn: "2022/2/26",
-  },
-  {
-    name: "F・ハニー",
-    kind: "ブレンド",
-    roast: "シティロースト",
-    processing: "W&N",
-    roastingShopName: "自家焙煎珈琲 隠房",
-    postedOn: "2022/2/20",
-  },
-]
+const roastedBeans = listUserRoastedBeans().filter((bean, id) => id < 4)
 </script>
 
 <style lang="scss" scoped>

@@ -4,5 +4,5 @@
 </template>
 
 <script setup lang="ts">
-import BrewingCoffeeList from "~/components/brewing-coffee-list.vue"
+import BrewingCoffeeList from "~/components/user/brewing-coffee-list.vue"
 </script>
