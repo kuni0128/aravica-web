@@ -6,6 +6,9 @@
     <el-main>
       <router-view />
     </el-main>
+    <el-footer height="120px">
+      © Aravica inc. 2022 All Rights Reserved.
+    </el-footer>
   </el-container>
 </template>
 
@@ -41,6 +44,17 @@ body {
   }
 
   .el-main {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+  .el-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    font-weight: bold;
+    color: #ffffff;
     padding-left: 10vw;
     padding-right: 10vw;
   }
