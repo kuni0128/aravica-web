@@ -45,14 +45,8 @@
         <el-checkbox v-model="filterForm.processing.pulpedNatural">
           パルプドナチュラル
         </el-checkbox>
-        <el-checkbox v-model="filterForm.processing.yellowHoney">
-          イエローハニー
-        </el-checkbox>
-        <el-checkbox v-model="filterForm.processing.redHoney">
-          レッドハニー
-        </el-checkbox>
-        <el-checkbox v-model="filterForm.processing.blackHoney">
-          ブラックハニー
+        <el-checkbox v-model="filterForm.processing.anaerobic">
+          アナエロビック
         </el-checkbox>
         <el-checkbox v-model="filterForm.processing.sumatra">
           スマトラ式
@@ -85,9 +79,7 @@ const filterForm = reactive({
     washed: false,
     natural: false,
     pulpedNatural: false,
-    yellowHoney: false,
-    redHoney: false,
-    blackHoney: false,
+    anaerobic: false,
     sumatra: false,
   },
 })
@@ -120,9 +112,7 @@ const filteredRoastedBeans = computed(() =>
         (filterForm.processing.washed && bean.processing == "W") ||
         (filterForm.processing.natural && bean.processing == "N") ||
         (filterForm.processing.pulpedNatural && bean.processing == "PN") ||
-        (filterForm.processing.yellowHoney && bean.processing == "YH") ||
-        (filterForm.processing.redHoney && bean.processing == "RH") ||
-        (filterForm.processing.blackHoney && bean.processing == "BH") ||
+        (filterForm.processing.anaerobic && bean.processing == "AE") ||
         (filterForm.processing.sumatra && bean.processing == "S")
     )
 )
