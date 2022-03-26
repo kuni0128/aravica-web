@@ -8,7 +8,7 @@ import "~/assets/styles/global.css"
 const routes: RouteRecordRaw[] = [
   {
     path: "/roaster",
-    component: import("../pages/roaster/index.vue"),
+    component: import("../../pages/roaster/index.vue"),
   },
 ]
 const router = createRouter({
