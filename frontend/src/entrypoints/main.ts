@@ -8,19 +8,19 @@ import "~/assets/styles/global.css"
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
-    component: import("./pages/user/index.vue"),
+    component: import("../pages/user/index.vue"),
   },
   {
     path: "/users/me",
-    component: import("./pages/user/users/me/index.vue"),
+    component: import("../pages/user/users/me/index.vue"),
   },
   {
     path: "/users/me/roasted_beans",
-    component: import("./pages/user/users/me/roasted_beans/index.vue"),
+    component: import("../pages/user/users/me/roasted_beans/index.vue"),
   },
   {
     path: "/users/me/brewing_coffees",
-    component: import("./pages/user/users/me/brewing_coffees/index.vue"),
+    component: import("../pages/user/users/me/brewing_coffees/index.vue"),
   },
 ]
 const router = createRouter({
