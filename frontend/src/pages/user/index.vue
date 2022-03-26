@@ -7,7 +7,7 @@
       </p>
     </el-col>
     <el-col :span="12" :xs="24">
-      <img class="image" src="src/assets/about.svg" />
+      <img class="image" src="../../assets/about.svg" />
     </el-col>
   </el-row>
 
