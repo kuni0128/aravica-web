@@ -2,9 +2,7 @@
   <el-container>
     <el-header>
       <router-link class="title" to="/users/me">Aravica</router-link>
-      <el-button>
-        <router-link to="/sign_in">ログイン</router-link>
-      </el-button>
+      <router-link to="/sign_in"><el-button>ログイン</el-button></router-link>
     </el-header>
     <el-main>
       <router-view />
