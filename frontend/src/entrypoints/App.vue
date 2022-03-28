@@ -46,6 +46,7 @@ body {
   .el-main {
     padding-left: 10vw;
     padding-right: 10vw;
+    min-height: 80vh;
   }
 
   .el-footer {
