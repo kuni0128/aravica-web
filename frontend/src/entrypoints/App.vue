@@ -2,6 +2,9 @@
   <el-container>
     <el-header>
       <router-link class="title" to="/users/me">Aravica</router-link>
+      <el-button>
+        <router-link to="/sign_in">ログイン</router-link>
+      </el-button>
     </el-header>
     <el-main>
       <router-view />
@@ -31,9 +34,8 @@ body {
   .el-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: var(--primary-color);
-    padding-left: 10vw;
-    padding-right: 10vw;
 
     .title {
       color: #ffffff;
