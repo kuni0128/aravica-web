@@ -31,6 +31,10 @@ const routes: RouteRecordRaw[] = [
     path: "/sign_up",
     component: import("../pages/user/sign_up/index.vue"),
   },
+  {
+    path: "/register",
+    component: import("../pages/user/register/index.vue"),
+  },
 ]
 const router = createRouter({
   history: createWebHistory(),

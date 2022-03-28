@@ -8,7 +8,9 @@
         </el-form-item>
       </el-form>
       <span class="sign-up-button">
-        <el-button type="primary">登録メール送信</el-button>
+        <router-link to="/register">
+          <el-button type="primary">登録メール送信</el-button>
+        </router-link>
       </span>
     </el-col>
   </el-row>
