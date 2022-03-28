@@ -16,25 +16,10 @@
 
 <style lang="scss" scoped>
 .sign-up {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   &-button {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 }
-
-//.sign-up {
-//  display: flex;
-//  flex-direction: column;
-//  align-items: center;
-//  justify-content: center;
-//
-//  &-label {
-//    font-size: 14px;
-//    margin-bottom: 6px;
-//  }
-//}
 </style>
