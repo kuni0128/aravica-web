@@ -19,6 +19,12 @@ gem 'mysql2', '~> 0.5'
 gem 'seedbank'
 
 #
+# Auth
+#
+gem 'devise'
+gem 'devise_token_auth'
+
+#
 # API
 #
 gem 'active_model_serializers', '~> 0.10.0'
