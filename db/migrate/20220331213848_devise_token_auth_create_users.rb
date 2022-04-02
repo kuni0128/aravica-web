@@ -5,9 +5,9 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
       t.string :uid, null: false, default: ""
       t.string :provider, null: false, default: "email"
 
-      t.string :nickname
-      t.string :image
-      t.string :email, index: { unique: true }
+      t.string :nickname, null: false
+      t.string :image, null: false
+      t.string :email, null: false, index: { unique: true }
 
       # Database authenticatable
       t.string :encrypted_password, null: false, default: ""

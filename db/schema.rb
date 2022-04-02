@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 2022_03_31_213848) do
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "uid", default: "", null: false
     t.string "provider", default: "email", null: false
-    t.string "nickname"
-    t.string "image"
-    t.string "email"
+    t.string "nickname", null: false
+    t.string "image", null: false
+    t.string "email", null: false
     t.string "encrypted_password", default: "", null: false
     t.text "tokens"
     t.string "reset_password_token"
