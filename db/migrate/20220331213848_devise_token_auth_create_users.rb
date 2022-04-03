@@ -15,6 +15,12 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
       # Tokens
       t.text :tokens
 
+      # Confirmable
+      t.string   :confirmation_token
+      t.datetime :confirmation_sent_at
+      t.datetime :confirmed_at
+      t.string   :unconfirmed_email # Only if using reconfirmable
+
       # Recoverable
       t.string   :reset_password_token, index: { unique: true }
       t.datetime :reset_password_sent_at

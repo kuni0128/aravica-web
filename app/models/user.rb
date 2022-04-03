@@ -6,6 +6,9 @@
 #
 #  id                     :bigint           not null, primary key
 #  allow_password_change  :boolean          default(FALSE)
+#  confirmation_sent_at   :datetime
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
 #  email                  :string(255)      not null
 #  encrypted_password     :string(255)      default(""), not null
 #  image                  :string(255)      not null
@@ -16,6 +19,7 @@
 #  reset_password_token   :string(255)
 #  tokens                 :text(65535)
 #  uid                    :string(255)      default(""), not null
+#  unconfirmed_email      :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -27,6 +31,7 @@
 #
 class User < ActiveRecord::Base
   extend Devise::Models
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable,
+         :rememberable, :validatable, :confirmable
   include DeviseTokenAuth::Concerns::User
 end

@@ -51,6 +51,10 @@ ActiveRecord::Schema.define(version: 2022_03_31_213848) do
     t.string "email", null: false
     t.string "encrypted_password", default: "", null: false
     t.text "tokens"
+    t.string "confirmation_token"
+    t.datetime "confirmation_sent_at"
+    t.datetime "confirmed_at"
+    t.string "unconfirmed_email"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.boolean "allow_password_change", default: false
