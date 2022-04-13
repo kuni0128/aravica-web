@@ -23,6 +23,7 @@ gem 'seedbank'
 #
 gem 'devise'
 gem 'devise_token_auth'
+gem 'rack-cors'
 
 #
 # API
