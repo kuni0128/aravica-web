@@ -3,7 +3,7 @@
     <el-col :md="12">
       <h3>プロフィールを登録</h3>
       <el-form>
-        <el-form-item label="写真" label-width="100px">
+        <el-form-item label="写真" :label-width="labelWidth">
           <el-upload action="" :auto-upload="false">
             <template #default>
               <div class="user-image">
@@ -16,11 +16,17 @@
             </template>
           </el-upload>
         </el-form-item>
-        <el-form-item label="ユーザー名" label-width="100px">
+        <el-form-item label="ユーザー名" :label-width="labelWidth">
           <el-input maxlength="20" show-word-limit />
         </el-form-item>
-        <el-form-item label="自己紹介" label-width="100px">
+        <el-form-item label="自己紹介" :label-width="labelWidth">
           <el-input type="textarea" maxlength="60" show-word-limit />
+        </el-form-item>
+        <el-form-item label="パスワード" :label-width="labelWidth">
+          <el-input type="password" />
+        </el-form-item>
+        <el-form-item label="確認用パスワード" :label-width="labelWidth">
+          <el-input type="password" />
         </el-form-item>
         <span class="register-button">
           <el-button type="primary">登録</el-button>
@@ -29,6 +35,10 @@
     </el-col>
   </el-row>
 </template>
+
+<script setup lang="ts">
+const labelWidth = "140px"
+</script>
 
 <style lang="scss" scoped>
 .user-image {
