@@ -4,34 +4,26 @@
 #
 # Table name: users
 #
-#  id                     :bigint           not null, primary key
-#  allow_password_change  :boolean          default(FALSE)
-#  confirmation_sent_at   :datetime
-#  confirmation_token     :string(255)
-#  confirmed_at           :datetime
-#  email                  :string(255)      not null
-#  encrypted_password     :string(255)      default(""), not null
-#  image                  :string(255)      not null
-#  nickname               :string(255)      not null
-#  provider               :string(255)      default("email"), not null
-#  remember_created_at    :datetime
-#  reset_password_sent_at :datetime
-#  reset_password_token   :string(255)
-#  tokens                 :text(65535)
-#  uid                    :string(255)      default(""), not null
-#  unconfirmed_email      :string(255)
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
+#  id                  :bigint           not null, primary key
+#  image               :string(255)      not null
+#  nickname            :string(255)      not null
+#  provider            :string(255)      default("email"), not null
+#  remember_created_at :datetime
+#  tokens              :text(65535)
+#  uid                 :string(255)      default(""), not null
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
 #
 # Indexes
 #
-#  index_users_on_email                 (email) UNIQUE
-#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
-#  index_users_on_uid_and_provider      (uid,provider) UNIQUE
+#  index_users_on_uid_and_provider  (uid,provider) UNIQUE
 #
 class User < ActiveRecord::Base
   extend Devise::Models
-  devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :validatable, :confirmable
+  devise :rememberable
+  #:registerable
   include DeviseTokenAuth::Concerns::User
+
+  has_one :database_authentication
+  has_one :password_reset_request
 end
