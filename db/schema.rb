@@ -81,7 +81,8 @@ ActiveRecord::Schema.define(version: 2022_03_31_213848) do
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "nickname", null: false
+    t.string "nickname", limit: 20, null: false
+    t.string "introduction", limit: 140, null: false
     t.string "image", null: false
     t.text "tokens"
     t.datetime "remember_created_at"

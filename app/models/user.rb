@@ -6,7 +6,8 @@
 #
 #  id                  :bigint           not null, primary key
 #  image               :string(255)      not null
-#  nickname            :string(255)      not null
+#  introduction        :string(140)      not null
+#  nickname            :string(20)       not null
 #  remember_created_at :datetime
 #  tokens              :text(65535)
 #  created_at          :datetime         not null

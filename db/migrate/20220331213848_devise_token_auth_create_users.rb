@@ -1,7 +1,8 @@
 class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
   def change
     create_table(:users) do |t|
-      t.string :nickname, null: false
+      t.string :nickname, null: false, limit: 20
+      t.string :introduction, null: false, limit: 140
       t.string :image, null: false
 
       # Token authentications

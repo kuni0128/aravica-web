@@ -20,7 +20,7 @@
           <el-input maxlength="20" show-word-limit />
         </el-form-item>
         <el-form-item label="自己紹介" :label-width="labelWidth">
-          <el-input type="textarea" maxlength="60" show-word-limit />
+          <el-input type="textarea" maxlength="140" show-word-limit />
         </el-form-item>
         <el-form-item label="パスワード" :label-width="labelWidth">
           <el-input type="password" />
