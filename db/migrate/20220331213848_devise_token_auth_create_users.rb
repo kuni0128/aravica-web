@@ -6,8 +6,6 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
 
       # Token authentications
       t.text :tokens
-      t.string :uid, null: false, default: ""
-      t.string :provider, null: false, default: "email"
 
       # Rememberable
       t.datetime :remember_created_at
@@ -16,14 +14,21 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
     end
 
     create_table(:user_registrations) do |t|
-      # Confirmable
+      # Registerable
       t.string :email, null: false, index: { unique: true }
+      t.string :unconfirmed_email, index: { unique: true }
+      t.string :provider, null: false, default: "email"
+      t.string :uid, null: false, default: ""
+
+      # Confirmable
       t.string   :confirmation_token, null: false, index: { unique: true }
       t.datetime :confirmation_sent_at, null: false
       t.datetime :confirmed_at
 
       t.timestamps null: false
     end
+
+    add_index :user_registrations, %i(uid provider), unique: true
 
     create_table(:user_database_authentications) do |t|
       t.references :user, foreign_key: true, index: { unique: true }
@@ -45,7 +50,5 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
 
       t.timestamps null: false
     end
-
-    add_index :users, %i(uid provider), unique: true
   end
 end
