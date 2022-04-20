@@ -17,7 +17,7 @@
     <el-col :xs="24" class="divider hidden-sm-and-up"></el-col>
     <el-col class="sign-up" :span="12" :xs="24">
       <div class="sign-up-label">メンバー登録がまだの方はこちら</div>
-      <router-link to="/sign_up">
+      <router-link to="/email_registration">
         <el-button type="primary">無料メンバー登録</el-button>
       </router-link>
     </el-col>
