@@ -13,7 +13,20 @@
  */
 
 
+import { OriginCountry } from './origin-country';
 
-export * from './apis/common-api';
-export * from './apis/user-api';
+/**
+ * 
+ * @export
+ * @interface ListOriginCountriesResponse
+ */
+export interface ListOriginCountriesResponse {
+    /**
+     * 
+     * @type {Array<OriginCountry>}
+     * @memberof ListOriginCountriesResponse
+     */
+    results: Array<OriginCountry>;
+}
+
 

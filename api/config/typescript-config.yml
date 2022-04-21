@@ -1,3 +1,6 @@
 # @see https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/typescript-axios.md
 additionalProperties:
+  modelPropertyNaming: camelCase
+  withSeparateModelsAndApi: true
+  modelPackage: models
   apiPackage: apis

@@ -12,6 +12,79 @@
     }
   ],
   "paths": {
+    "/user/user_registrations": {
+      "post": {
+        "summary": "Create user registrations",
+        "operationId": "create-user-registrations",
+        "description": "Create user registrations",
+        "tags": [
+          "user"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "create_user_registrations_request",
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  }
+                },
+                "required": [
+                  "email"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "create_user_registrations_response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "create_user_registrations_response",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "email": {
+                      "type": "string",
+                      "format": "email"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "email",
+                    "provider",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/default"
+          }
+        }
+      }
+    },
     "/common/origin_countries": {
       "get": {
         "summary": "List origin countries",
@@ -66,33 +139,49 @@
     }
   },
   "components": {
+    "schemas": {
+      "ErrorResponse": {
+        "title": "ErrorResponse",
+        "type": "object",
+        "x-tags": [
+          "errors"
+        ],
+        "properties": {
+          "messages": {
+            "type": "object"
+          },
+          "full_messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "messages",
+          "full_messages"
+        ]
+      }
+    },
     "responses": {
       "default": {
-        "description": "error",
+        "description": "default error",
         "content": {
           "application/json": {
             "schema": {
-              "title": "ErrorResponse",
-              "type": "object",
-              "properties": {
-                "messages": {
-                  "type": "object"
-                },
-                "full_messages": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              },
-              "required": [
-                "messages",
-                "full_messages"
-              ]
+              "$ref": "#/components/schemas/ErrorResponse"
             }
           }
         }
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "common"
+    },
+    {
+      "name": "user"
+    }
+  ]
 }

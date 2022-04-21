@@ -14,6 +14,24 @@
 
 
 
-export * from './apis/common-api';
-export * from './apis/user-api';
+/**
+ * 
+ * @export
+ * @interface ErrorResponse
+ */
+export interface ErrorResponse {
+    /**
+     * 
+     * @type {object}
+     * @memberof ErrorResponse
+     */
+    messages: object;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ErrorResponse
+     */
+    fullMessages: Array<string>;
+}
+
 

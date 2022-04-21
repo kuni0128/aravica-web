@@ -14,6 +14,24 @@
 
 
 
-export * from './apis/common-api';
-export * from './apis/user-api';
+/**
+ * 
+ * @export
+ * @interface OriginCountry
+ */
+export interface OriginCountry {
+    /**
+     * 
+     * @type {number}
+     * @memberof OriginCountry
+     */
+    id: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof OriginCountry
+     */
+    name: string;
+}
+
 

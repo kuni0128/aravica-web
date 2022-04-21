@@ -14,6 +14,18 @@
 
 
 
-export * from './apis/common-api';
-export * from './apis/user-api';
+/**
+ * 
+ * @export
+ * @interface CreateUserRegistrationsRequest
+ */
+export interface CreateUserRegistrationsRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateUserRegistrationsRequest
+     */
+    email: string;
+}
+
 
