@@ -2,7 +2,6 @@
 
 module Api::V1::User
   class UserRegistrationsController < DeviseTokenAuth::RegistrationsController
-
     private
 
     def sign_up_params
