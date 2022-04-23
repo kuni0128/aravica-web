@@ -2,7 +2,9 @@
   <el-row>
     <el-col :md="12">
       <h3>登録ありがとうございます</h3>
-      <p>メールアドレス存在確認メールを送信しました。</p>
+      <p>
+        メールアドレス存在確認メールを送信しました。メールを確認してプロフィール登録に進んでください。
+      </p>
       <span class="back-button">
         <router-link to="/">
           <el-button type="primary" @click="router.push('/')">
