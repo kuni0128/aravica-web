@@ -1,17 +1,6 @@
 default:
-  description: error
+  description: default error
   content:
     application/json:
       schema:
-        title: ErrorResponse
-        type: object
-        properties:
-          messages:
-            type: object
-          full_messages:
-            type: array
-            items:
-              type: string
-        required:
-          - messages
-          - full_messages
+        $ref: ./openapi.yml#/components/schemas/ErrorResponse

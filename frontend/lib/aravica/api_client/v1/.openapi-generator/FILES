@@ -1,5 +1,16 @@
+.gitignore
+.npmignore
 api.ts
+apis/common-api.ts
+apis/user-api.ts
 base.ts
 common.ts
 configuration.ts
+git_push.sh
 index.ts
+models/create-user-registrations-request.ts
+models/create-user-registrations-response.ts
+models/error-response.ts
+models/index.ts
+models/list-origin-countries-response.ts
+models/origin-country.ts

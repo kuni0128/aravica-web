@@ -48,5 +48,7 @@ ci/rspec:
 #
 openapi/bundle:
 	docker run --rm -v "${PWD}:/local" jeanberu/swagger-cli swagger-cli bundle local/api/v1/openapi.yml -o local/api/bundles/openapi-bundle-v1.json
-openapi/generate: openapi/bundle
-	docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i /local/api/bundles/openapi-bundle-v1.json -g typescript-axios -o /local/frontend/lib/aravica/api_client/v1
+openapi/validate:
+	docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:v5.1.1 validate -i /local/api/bundles/openapi-bundle-v1.json
+openapi/generate: openapi/bundle openapi/validate
+	docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:v5.1.1 generate -i /local/api/bundles/openapi-bundle-v1.json -g typescript-axios -o /local/frontend/lib/aravica/api_client/v1  -c /local/api/config/typescript-config.yml

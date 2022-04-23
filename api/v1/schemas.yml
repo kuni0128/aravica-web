@@ -1,0 +1,2 @@
+ErrorResponse:
+  $ref: ./models/error_response.yml

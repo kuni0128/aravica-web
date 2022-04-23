@@ -1,0 +1,14 @@
+title: ErrorResponse
+type: object
+x-tags:
+  - errors
+properties:
+  messages:
+    type: object
+  full_messages:
+    type: array
+    items:
+      type: string
+required:
+  - messages
+  - full_messages

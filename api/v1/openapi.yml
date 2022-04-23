@@ -7,8 +7,15 @@ servers:
   - description: development
     url: 'http://localhost:33000/api/v1'
 paths:
+  /user/user_registrations:
+    $ref: ./paths/user/user_registrations/create.yml
   /common/origin_countries:
-    $ref: ./common/paths/origin_countries/list.yml
+    $ref: ./paths/common/origin_countries/list.yml
 components:
+  schemas:
+    $ref: ./schemas.yml
   responses:
     $ref: ./responses.yml
+tags:
+  - name: common
+  - name: user

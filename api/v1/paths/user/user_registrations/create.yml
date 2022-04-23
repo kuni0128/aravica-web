@@ -1,0 +1,50 @@
+post:
+  summary: Create user registrations
+  operationId: create-user-registrations
+  description: Create user registrations
+  tags:
+    - user
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          title: create_user_registrations_request
+          type: object
+          properties:
+            email:
+              type: string
+              format: email
+          required:
+            - email
+  responses:
+    '200':
+      description: create_user_registrations_response
+      content:
+        application/json:
+          schema:
+            title: create_user_registrations_response
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              email:
+                type: string
+                format: email
+              provider:
+                type: string
+              created_at:
+                type: string
+                format: date-time
+              updated_at:
+                type: string
+                format: date-time
+            required:
+              - id
+              - email
+              - provider
+              - created_at
+              - updated_at
+    default:
+      $ref: ../../../openapi.yml#/components/responses/default
