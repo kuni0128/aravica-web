@@ -21,6 +21,7 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class User::DatabaseAuthentication < ApplicationRecord
+  extend Devise::Models
   devise :database_authenticatable, :validatable
 
   belongs_to :user

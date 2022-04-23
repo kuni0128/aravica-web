@@ -22,6 +22,7 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class User::PasswordResetRequest < ApplicationRecord
+  extend Devise::Models
   devise :recoverable
 
   belongs_to :user
