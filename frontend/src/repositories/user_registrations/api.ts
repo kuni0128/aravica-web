@@ -1,27 +1,10 @@
-import axios, { AxiosInstance } from "axios"
-import { Configuration, UserApi } from "~lib/aravica/api_client/v1"
-
-// TODO: いい感じのディレクトリに置いて、共通化する
-const conf = new Configuration({
-  basePath: "http://localhost:33000/api/v1",
-  baseOptions: {},
-})
-const apiAxiosClient = axios.create()
-
-const Client = <T>(
-  Api: new (
-    configuration: Configuration,
-    basePath: string,
-    axios: AxiosInstance
-  ) => T
-): T => {
-  return new Api(conf, "", apiAxiosClient)
-}
-
-const userApi = Client(UserApi)
+import { UserApi } from "~lib/aravica/api_client/v1"
+import { apiClient } from "~lib/axios/api_client/v1/client"
 
 // TODO: リクエスト/レスポンスを変換するaxios interceptorsが必要
 
+const userApi = apiClient(UserApi)
+
 export const createUserRegistrations = async (email: string) => {
-  await userApi.createUserRegistrations({ email })
+  await userApi.createUserRegistrations({ email, fullName: "hokkaido" })
 }
