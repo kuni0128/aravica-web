@@ -35,11 +35,13 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
         /**
          * Create user registrations
          * @summary Create user registrations
-         * @param {CreateUserRegistrationsRequest} [createUserRegistrationsRequest] 
+         * @param {CreateUserRegistrationsRequest} createUserRegistrationsRequest 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createUserRegistrations: async (createUserRegistrationsRequest?: CreateUserRegistrationsRequest, options: any = {}): Promise<RequestArgs> => {
+        createUserRegistrations: async (createUserRegistrationsRequest: CreateUserRegistrationsRequest, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'createUserRegistrationsRequest' is not null or undefined
+            assertParamExists('createUserRegistrations', 'createUserRegistrationsRequest', createUserRegistrationsRequest)
             const localVarPath = `/user/user_registrations`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -79,11 +81,11 @@ export const UserApiFp = function(configuration?: Configuration) {
         /**
          * Create user registrations
          * @summary Create user registrations
-         * @param {CreateUserRegistrationsRequest} [createUserRegistrationsRequest] 
+         * @param {CreateUserRegistrationsRequest} createUserRegistrationsRequest 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createUserRegistrations(createUserRegistrationsRequest?: CreateUserRegistrationsRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateUserRegistrationsResponse>> {
+        async createUserRegistrations(createUserRegistrationsRequest: CreateUserRegistrationsRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateUserRegistrationsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createUserRegistrations(createUserRegistrationsRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -100,11 +102,11 @@ export const UserApiFactory = function (configuration?: Configuration, basePath?
         /**
          * Create user registrations
          * @summary Create user registrations
-         * @param {CreateUserRegistrationsRequest} [createUserRegistrationsRequest] 
+         * @param {CreateUserRegistrationsRequest} createUserRegistrationsRequest 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createUserRegistrations(createUserRegistrationsRequest?: CreateUserRegistrationsRequest, options?: any): AxiosPromise<CreateUserRegistrationsResponse> {
+        createUserRegistrations(createUserRegistrationsRequest: CreateUserRegistrationsRequest, options?: any): AxiosPromise<CreateUserRegistrationsResponse> {
             return localVarFp.createUserRegistrations(createUserRegistrationsRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -120,12 +122,12 @@ export class UserApi extends BaseAPI {
     /**
      * Create user registrations
      * @summary Create user registrations
-     * @param {CreateUserRegistrationsRequest} [createUserRegistrationsRequest] 
+     * @param {CreateUserRegistrationsRequest} createUserRegistrationsRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof UserApi
      */
-    public createUserRegistrations(createUserRegistrationsRequest?: CreateUserRegistrationsRequest, options?: any) {
+    public createUserRegistrations(createUserRegistrationsRequest: CreateUserRegistrationsRequest, options?: any) {
         return UserApiFp(this.configuration).createUserRegistrations(createUserRegistrationsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
