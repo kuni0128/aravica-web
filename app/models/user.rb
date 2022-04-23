@@ -13,11 +13,11 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   extend Devise::Models
   devise :rememberable
   # include DeviseTokenAuth::Concerns::User
 
-  has_one :database_authentication
-  has_one :password_reset_request
+  has_one :database_authentication, dependent: :destroy
+  has_one :password_reset_request, dependent: :destroy
 end
