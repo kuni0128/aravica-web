@@ -49,6 +49,7 @@ end
 
 group :development do
   gem 'annotate'
+  gem 'letter_opener_web', '~> 2.0'
   gem 'listen', '~> 3.3'
   gem 'solargraph'
   gem 'spring'

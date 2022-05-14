@@ -8,15 +8,13 @@
         </el-form-item>
       </el-form>
       <span class="send-button">
-        <router-link to="/sign_up">
-          <el-button
-            type="primary"
-            @click="onClickSendEmail"
-            :disabled="emailInvalid"
-          >
-            登録メール送信
-          </el-button>
-        </router-link>
+        <el-button
+          type="primary"
+          @click="onClickSendEmail"
+          :disabled="emailInvalid"
+        >
+          登録メール送信
+        </el-button>
       </span>
     </el-col>
   </el-row>
@@ -38,8 +36,10 @@ const emailInvalid = computed(() => {
 })
 
 const onClickSendEmail = async () => {
-  await createUserRegistrations(email.value)
-  await router.push("/email_registration/thanks")
+  // TODO: error handling
+  await createUserRegistrations(email.value).then(() => {
+    router.push("/email_registration/thanks")
+  })
 }
 </script>
 
